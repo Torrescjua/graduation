@@ -1,0 +1,7 @@
+# Original media backups are not required for the published site.
+fotos/Photos-1-001/
+Photos-1-001.zip
+
+# Local tooling artifacts.
+__pycache__/
+*.py[cod]

@@ -23,6 +23,17 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          lfs: true
+      - name: Decrypt site media
+        env:
+          MEDIA_PASSPHRASE: ${{ secrets.MEDIA_PASSPHRASE }}
+        run: |
+          test -n "$MEDIA_PASSPHRASE"
+          openssl enc -d -aes-256-cbc -md sha256 -pbkdf2 -iter 600000 -salt \
+            -in fotos.enc -out fotos.tar.gz -pass env:MEDIA_PASSPHRASE
+          tar -xzf fotos.tar.gz
+          rm fotos.tar.gz
       - name: Configure Pages
         uses: actions/configure-pages@v5
         with:

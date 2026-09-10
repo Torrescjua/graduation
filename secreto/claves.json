@@ -1,0 +1,5 @@
+{
+  "_": "Claves de la página. No importan mayúsculas ni espacios de más. Después de cambiarlas corre: node cifrar.js",
+  "principal": ["daniela", "dany"],
+  "privada": ["dany kyss godt"]
+}

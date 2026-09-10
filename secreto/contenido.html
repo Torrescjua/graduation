@@ -1,0 +1,236 @@
+<!--
+  CONTENIDO DE LA PÁGINA (todo lo que aparece después de la clave de entrada).
+  Edita aquí y luego corre:  node cifrar.js
+  Este archivo NO se sube a Netlify: la carpeta que se publica es sitio/.
+-->
+
+<!-- ============ HERO ============ -->
+<section id="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+    <figure class="hero-portrait">
+      <img src="retrato.webp" alt="Retrato de Daniela" width="900" height="900"
+           decoding="async" onerror="this.closest('.hero-portrait').remove()">
+    </figure>
+    <div class="hero-inner">
+      <span class="eyebrow mono">Edición especial · Comunicación Social</span>
+      <h1>Una voz que <em>deja huella</em>.</h1>
+      <p class="lede">Para Daniela: por convertir las ideas en conversaciones y cada paso del camino en una razón para celebrar.</p>
+      <a class="cue" href="#tiempo">
+        Bajar despacio
+        <span aria-hidden="true">↓</span>
+      </a>
+    </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CAPÍTULO 01 — CONTADOR ============ -->
+<section class="chapter" id="tiempo">
+  <div class="wrap">
+    <div class="chapter-tag mono"><b>01</b> Nuestro tiempo</div>
+    <h2 class="chapter-title rise">Un logro que se construyó día por día.</h2>
+    <p class="chapter-lede rise">Cada jornada de esfuerzo, curiosidad y propósito también cuenta. Este contador no se detiene.</p>
+    <div class="counter rise">
+      <div class="count-box card"><span class="n" id="c-days">0</span><span class="l mono">Días</span></div>
+      <div class="count-box card"><span class="n" id="c-hours">00</span><span class="l mono">Horas</span></div>
+      <div class="count-box card"><span class="n" id="c-min">00</span><span class="l mono">Min</span></div>
+      <div class="count-box card"><span class="n" id="c-sec">00</span><span class="l mono">Seg</span></div>
+    </div>
+    <p class="since rise" id="since-label">Contando desde enero de 2021.</p>
+  </div>
+</section>
+
+<!-- ============ CAPÍTULO 02 — LOGROS ============ -->
+<section class="chapter" id="camino">
+  <div class="wrap">
+    <div class="chapter-tag mono"><b>02</b> Logros</div>
+    <h2 class="chapter-title rise">Una carrera llena de logros.</h2>
+    <div class="timeline" id="achievements-timeline">
+      <!-- CAPÍTULO 02: edita el título (.when) y detalle (.what) de cada logro -->
+      <div class="step rise">
+        <div class="when mono">Campañas de publicidad</div>
+        <p class="what">Trabajo creativo para Lummina, Bella Piel y tratamientos LBSAS ISDIN.</p>
+      </div>
+      <div class="step rise">
+        <div class="when mono">Modelaje · Kevin's Joyería</div>
+        <p class="what">Fotografías de modelaje que reflejan seguridad, estilo y presencia frente a cámara.</p>
+      </div>
+      <div class="step rise">
+        <div class="when mono">Campañas navideñas</div>
+        <p class="what">Participación en campañas llenas de concepto, emoción y espíritu de temporada.</p>
+      </div>
+      <div class="step rise">
+        <div class="when mono">Proyecto con Nubia</div>
+        <p class="what">Una colaboración que suma otra historia importante a su portafolio.</p>
+      </div>
+      <div class="step rise">
+        <div class="when mono">Comercial para Advil</div>
+        <p class="what">Experiencia en producción comercial, llevando su talento a una campaña de alcance nacional.</p>
+      </div>
+      <div class="step rise">
+        <div class="when mono">Prácticas en Miami · Falcon</div>
+        <p class="what">Una experiencia profesional internacional que abrió nuevas perspectivas y oportunidades.</p>
+      </div>
+      <div class="step rise">
+        <div class="when mono">Javeriana Estéreo</div>
+        <p class="what">Participación en <em>Jazz en voz propia</em>, compartiendo su voz y su pasión por la radio.</p>
+      </div>
+      <div class="step rise">
+        <div class="when mono">Tesis y próximas charlas</div>
+        <p class="what">El cierre exitoso de su tesis y el comienzo de muchas conversaciones que aún tiene por liderar.</p>
+      </div>
+    </div>
+    <div class="achievement-adder rise">
+      <h3>Sigue escribiendo la historia</h3>
+      <p>Agrega nuevos logros; quedarán guardados en este navegador para futuras visitas.</p>
+      <form class="achievement-form" id="achievement-form">
+        <input class="field" id="achievement-title" type="text" maxlength="80" placeholder="Nombre del logro" required>
+        <input class="field" id="achievement-description" type="text" maxlength="240" placeholder="Una breve descripción" required>
+        <button class="btn" type="submit">Agregar</button>
+      </form>
+      <p class="adder-status mono" id="achievement-status" aria-live="polite"></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CAPÍTULO 03 — CARTA ============ -->
+<section class="chapter" id="carta">
+  <div class="wrap">
+    <div class="chapter-tag mono"><b>03</b> La carta</div>
+    <h2 class="chapter-title rise">Algo que quería decirte.</h2>
+
+    <p class="env-hint mono">Toca el sobre para abrirlo</p>
+    <div class="envelope-frame rise">
+      <div class="envelope-scene" id="envelope-scene" role="button" tabindex="0" aria-label="Abrir la carta" aria-expanded="false">
+        <div class="env-back" aria-hidden="true"></div>
+
+        <article class="paper">
+          <svg class="paper-rose" aria-hidden="true"><use href="#ic-rose"/></svg>
+
+          <!-- CAPÍTULO 03 · LA CARTA
+               Cada <div class="page"> es una hoja. Agrega o quita las que
+               quieras: la numeración y las flechas se ajustan solas.
+               Escribe cada párrafo en una línea larga, sin cortarla a mano. -->
+          <div class="sheet" id="sheet">
+
+            <div class="page">
+              <p class="page-open">Hola Dani,</p>
+              <p>Si este mensaje te llega a tiempo, hoy será tu día especial, un día en el que muchas cosas terminan y otras nuevas comienzan.</p>
+              <p>Por mucho tiempo estuve pensando qué podía regalarle a una mujer que parece tenerlo casi todo. Al final, sin mentirte, lo único que me llegó a la cabeza fue en darte un recuerdo para toda la vida.</p>
+            </div>
+
+            <div class="page">
+              <p>Eso es lo que he intentado darte siempre. Y con este espacio busco regalarte algo importante, un lugar donde puedas guardar y recordar tus logros, un lugar para revivir todo lo que has vivido, para que cuando te sientas bajita de ánimo vengas y recuerdes todo lo que has logrado.</p>
+              <p>Sé que la vida está llena de días tristes y días felices, y es importante tenerlos presentes. Por mi parte, me alegra pensar que en algún momento fui ese espacio en el que te sentiste feliz.</p>
+            </div>
+
+            <div class="page">
+              <p>Me emociona verte crecer, aunque durante un tiempo pensaste que no lo hacías. Dani, siempre estuve ahí, desde lejos, observando cada uno de tus pasos.</p>
+              <p>Hoy el fruto de todos tus esfuerzos salen a resaltar, no solo porque terminaste tu carrera sino porque llegas con la cabeza en alto y pudiendo presumir de todo lo que tienes y has logrado.</p>
+            </div>
+
+            <div class="page">
+              <p>Me alegra mucho poder celebrar este día contigo, aunque esté lejos, y ofrecerte algo que sale de ese lugar especial en mi corazón que siempre será tuyo.</p>
+              <p>Más que nadie, sé que te mereces esto. A pesar de todo lo que ha pasado, tú has demostrado ser una mujer inteligente y fuerte.</p>
+            </div>
+
+            <div class="page">
+              <p>Aunque muchas veces te daba pena presumir o mostrar tu inteligencia, yo siempre supe que tú tenías todas las respuestas. Has demostrado que nunca te rindes por lo que deseas.</p>
+              <p>Hoy, desde donde sea que me encuentre, quiero que sepas que te pienso, que celebro este día contigo y que estoy profundamente orgulloso de ti.</p>
+              <p>Orgulloso de la mujer que eres, de todo lo que has conseguido y de todo lo que todavía te queda por conquistar.</p>
+            </div>
+
+            <div class="page">
+              <p>Y aunque la vida nos haya llevado por caminos que ninguno de los dos imaginaba, hay cosas que el tiempo no ha podido cambiar.</p>
+              <p>Una de ellas es lo especial que sigues siendo para mí.</p>
+              <p>Así que disfruta este día. Presúmelo, celébralo y siéntete orgullosa de ti, porque te lo ganaste.</p>
+            </div>
+
+            <div class="page">
+              <p>Y cuando algún día vuelvas a sentir que no estás avanzando, vuelve aquí. Mira todo lo que has conseguido y recuerda a esa Dani que alguna vez dudó de sí misma y aun así llegó hasta aquí.</p>
+              <p>Yo siempre supe que lo harías.</p>
+              <p>Felicidades, Dani.</p>
+              <p>Estoy muy orgulloso de ti.</p>
+              <p>De mi comunicadora, única y especial.</p>
+              <p class="letter-sign">Con todo mi amor, hoy y siempre.</p>
+            </div>
+
+          </div>
+
+          <div class="pager">
+            <button class="pg-btn" type="button" data-prev aria-label="Página anterior">‹</button>
+            <span class="pg-count mono" id="pg-count"></span>
+            <button class="pg-btn" type="button" data-next aria-label="Página siguiente">›</button>
+          </div>
+        </article>
+
+        <div class="env-front" aria-hidden="true"></div>
+        <div class="env-flap" aria-hidden="true"><span class="env-seal"><svg viewBox="0 0 100 100"><use href="#ic-rose"/></svg></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CAPÍTULO 04 — MOSAICO DE FOTOS ============ -->
+<section class="chapter" id="momentos">
+  <div class="wrap">
+    <div class="chapter-tag mono"><b>04</b> Momentos <span class="count" id="shot-count"></span></div>
+    <h2 class="chapter-title rise">Los pedacitos que logré guardar.</h2>
+    <p class="chapter-lede rise">Baja con calma: cada foto aparece a su ritmo. Toca cualquiera para verla en grande.</p>
+    <div class="mosaic" id="mosaic"></div>
+    <div class="empty hidden" id="mosaic-empty">
+      <span class="big">🖼️</span>
+      <p>Aquí entran las fotos. Colócalas en la carpeta <code>fotos/</code> con los nombres <code>foto-001.jpg</code>, <code>foto-002.jpg</code>… y aparecerán solas.</p>
+    </div>
+    <div class="adder rise">
+      <div>
+        <h3>Sigue sumando recuerdos</h3>
+        <p>Agrega fotos desde este dispositivo cuando quieras. Se guardan solo en tu navegador, no se suben a ningún servidor.</p>
+      </div>
+      <label class="btn btn-ghost" for="photo-upload">Agregar fotos</label>
+      <input class="hidden" id="photo-upload" type="file" accept="image/jpeg,image/png,image/webp,image/gif" multiple>
+      <p class="adder-status mono" id="adder-status" aria-live="polite"></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CAPÍTULO 05 — VIDEOS ============ -->
+<section class="chapter" id="videos">
+  <div class="wrap">
+    <div class="chapter-tag mono"><b>05</b> En movimiento</div>
+    <h2 class="chapter-title rise">Momentos que se escuchan.</h2>
+    <div class="films" id="films"></div>
+    <div class="empty hidden" id="films-empty">
+      <span class="big">🎬</span>
+      <p>Los videos van en <code>fotos/</code> como <code>video-001.mp4</code>, <code>video-002.mp4</code>… y aparecen aquí automáticamente.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CAPÍTULO 06 — PRIVADO ============ -->
+<section class="chapter" id="privada">
+  <div class="wrap">
+    <div class="chapter-tag mono"><b>06</b> Solo para ti</div>
+    <h2 class="chapter-title rise">Un rincón que nadie más abre.</h2>
+    <div class="card rise">
+      <div class="lock" id="inner-lock">
+        <div class="gate-seal">🗝️</div>
+        <h3>Hay algo más</h3>
+        <p>Una última pista: es un apodo en otro idioma, de esos que solo tú y yo entendemos.</p>
+        <input class="field" type="text" id="inner-input" placeholder="Palabra secreta" autocomplete="off" aria-label="Contraseña privada">
+        <button class="btn" id="inner-btn" type="button" style="width:100%">Abrir el mensaje</button>
+        <div class="err" id="inner-error" role="status"></div>
+      </div>
+      <!-- Lo que va aquí adentro está en secreto/privado.html, cifrado con la
+           segunda clave. Se inyecta solo cuando la clave es correcta. -->
+      <div id="inner-content" class="hidden"></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p class="mono">Hecho con <span class="heart">♥</span> para Daniela · Comunicación Social · <span id="year"></span></p>
+  </div>
+</footer>

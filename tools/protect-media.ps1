@@ -8,8 +8,9 @@ $ErrorActionPreference = 'Stop'
 
 $root = Split-Path -Parent $PSScriptRoot
 $mediaDirectory = Join-Path $root 'fotos'
-$archivePath = Join-Path $root 'fotos.tar.gz'
+$archivePath = Join-Path $root 'fotos.tar.gz.tmp'
 $encryptedPath = Join-Path $root 'fotos.enc'
+$encryptedTempPath = Join-Path $root 'fotos.enc.tmp'
 $plaintextPassphrase = [System.Net.NetworkCredential]::new('', $Passphrase).Password
 $openSslCommand = (Get-Command openssl -ErrorAction SilentlyContinue).Source
 
@@ -31,21 +32,22 @@ try {
         throw 'No media files were found in fotos/.'
     }
 
-    Remove-Item -LiteralPath $archivePath, $encryptedPath -Force -ErrorAction SilentlyContinue
+    Remove-Item -LiteralPath $archivePath, $encryptedTempPath -Force -ErrorAction SilentlyContinue
     & tar -czf $archivePath -C $root fotos
     if ($LASTEXITCODE -ne 0) {
         throw 'Could not create the media archive.'
     }
 
     & $openSslCommand enc -aes-256-cbc -md sha256 -pbkdf2 -iter 600000 -salt `
-        -in $archivePath -out $encryptedPath -pass "pass:$plaintextPassphrase"
+        -in $archivePath -out $encryptedTempPath -pass "pass:$plaintextPassphrase"
     if ($LASTEXITCODE -ne 0) {
         throw 'Could not encrypt the media archive.'
     }
 
-    Remove-Item -LiteralPath $archivePath -Force
+    Move-Item -LiteralPath $encryptedTempPath -Destination $encryptedPath -Force
     Write-Host 'Created fotos.enc. Add MEDIA_PASSPHRASE as a GitHub Actions secret before deploying.'
 }
 finally {
+    Remove-Item -LiteralPath $archivePath, $encryptedTempPath -Force -ErrorAction SilentlyContinue
     $plaintextPassphrase = $null
 }

@@ -5,8 +5,8 @@ Organiza tus fotos y videos para la página de Daniela.
 Qué hace:
 1. Lee todas las imágenes y videos de una carpeta de origen (esa carpeta
    con todas tus fotos que "no puedes subir porque son muchas").
-2. Las COPIA (nunca mueve ni borra el original) a la carpeta sitio/fotos/ de esta
-   página, renombrándolas foto-001.jpg, foto-002.jpg... y video-001.mp4,
+2. Las COPIA (nunca mueve ni borra el original) a la carpeta fotos/ del proyecto,
+   renombrándolas foto-001.jpg, foto-002.jpg... y video-001.mp4,
    video-002.mp4... en orden cronológico (por fecha de modificación).
 3. Si tienes Pillow instalado (pip install pillow), además comprime y
    convierte cada foto a un JPG liviano (máx. 2000px de lado, calidad 82)
@@ -46,7 +46,7 @@ def main():
         print(f"No encuentro esa carpeta: {source}")
         sys.exit(1)
 
-    dest = Path(__file__).parent / "sitio" / "fotos"
+    dest = Path(__file__).parent / "fotos"
     dest.mkdir(exist_ok=True)
 
     files = sorted(

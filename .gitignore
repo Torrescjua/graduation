@@ -6,6 +6,8 @@ Photos-1-001.zip
 fotos/*
 !fotos/.mantener-esta-carpeta
 !fotos.enc
+sitio/fotos/*
+!sitio/fotos/.mantener-esta-carpeta
 
 # Local tooling artifacts.
 __pycache__/
